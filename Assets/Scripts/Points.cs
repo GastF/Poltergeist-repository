@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Points : MonoBehaviour
 {
-    public int puntos;
-    public Text txt;
+    public Text txt; //Texto de los puntos
     public int curr;
+    public int puntos;
     int prev;
-    bool combo;
+    bool combo = false; //Para activar el combo
 
     private void Update()
     {
@@ -24,7 +24,7 @@ public class Points : MonoBehaviour
         }
 
         //Desactiva el combo
-        if (curr < prev)
+        if (curr < prev || curr >= prev + 2)
         {
             combo = false;
             curr = 0;
@@ -39,7 +39,6 @@ public class Points : MonoBehaviour
         {
             puntos += i * curr;
         }
-        
-        puntos += i;
+            puntos += i;
     }
 }

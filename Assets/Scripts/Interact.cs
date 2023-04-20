@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Interact : MonoBehaviour
 {
-    public Image img;
-    public Points points;
-    public int i;
-    public int ID;
+    public Image img; //Fantasma
+    public Points points; //El sistema de puntos
+    public Sprite spr; //Imagen de que fue usado
+    public int i; //Cuantos puntos da
+    public int ID; //Orden de secuencia
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class Interact : MonoBehaviour
 
     private void OnMouseExit()
     {
-        img.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        img.color = new Color32(255, 255, 255, 100);
     }
 
     //Sumar puntos
@@ -31,7 +32,10 @@ public class Interact : MonoBehaviour
     {
         points.PointUp(i);
         points.curr = ID;
-        //Desactiva funcion de los puntos
+        //Desactiva interacción con el objeto
         GetComponent<BoxCollider2D>().enabled = false;
+
+        //Cambia la imagen del objeto
+        GetComponent<SpriteRenderer>().sprite = spr;
     }
 }

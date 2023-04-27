@@ -439,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!95 &72149367
 Animator:
   serializedVersion: 5
@@ -1628,6 +1629,7 @@ MonoBehaviour:
   canBeClicked: 1
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!54 &436219457
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2622,6 +2624,7 @@ MonoBehaviour:
   luzDeLaHabitacion: {fileID: 606775285}
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!1 &757121974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,6 +3062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!95 &863327004
 Animator:
   serializedVersion: 5
@@ -3203,6 +3207,7 @@ MonoBehaviour:
   canBeClicked: 1
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!54 &864704320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3960,6 +3965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!65 &1002893954
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4799,6 +4805,7 @@ MonoBehaviour:
   canBeClicked: 1
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!54 &1214290766
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5585,6 +5592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!95 &1440966695
 Animator:
   serializedVersion: 5
@@ -6996,6 +7004,7 @@ MonoBehaviour:
   canBeClicked: 1
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!54 &1697268354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7513,6 +7522,7 @@ MonoBehaviour:
   canBeClicked: 1
   pwr: {fileID: 0}
   pnt: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!1 &1864661367
 GameObject:
   m_ObjectHideFlags: 0
@@ -7656,7 +7666,7 @@ GameObject:
   - component: {fileID: 1905149333}
   m_Layer: 5
   m_Name: Cursor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7900,6 +7910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pwr: {fileID: 0}
   pnts: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!65 &2003374416
 BoxCollider:
   m_ObjectHideFlags: 0

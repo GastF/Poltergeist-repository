@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OpenDoor : MonoBehaviour
 {
     public Power pwr;
     public Points pnts;
+    public GameObject gs;
 
     private bool doorOpen = false;
     private Animator animator;
@@ -15,6 +17,27 @@ public class OpenDoor : MonoBehaviour
         animator = GetComponent<Animator>();
         pwr = FindObjectOfType<Power>();
         pnts = FindObjectOfType<Points>();
+        gs = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void OnMouseEnter()
+    {
+        if (!doorOpen && pwr.pwr < 3)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+        }
+
+        if (!doorOpen && pwr.pwr >= 3)
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+        }
+    }
+    private void OnMouseExit()
+    {
+        if (!doorOpen)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        }
     }
 
     private void OnMouseDown()
@@ -24,7 +47,8 @@ public class OpenDoor : MonoBehaviour
                 animator.enabled = true;
                 doorOpen = true;
                 pwr.pwr -= 3;
-                pnts.puntos += 750;
+                pnts.puntos += 30;
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }
 }

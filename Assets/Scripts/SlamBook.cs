@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlamBook : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SlamBook : MonoBehaviour
 
     public Power pwr;
     public Points pnts;
+    public GameObject gs;
 
     private Rigidbody rb;
 
@@ -18,6 +20,28 @@ public class SlamBook : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         pwr = FindObjectOfType<Power>();
         pnts = FindObjectOfType<Points>();
+        gs = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void OnMouseEnter()
+    {
+        if (canBeClicked && pwr.pwr < 2)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+        }
+
+        if (canBeClicked && pwr.pwr >= 2)
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (canBeClicked)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        }
     }
 
     void OnMouseDown()
@@ -28,7 +52,8 @@ public class SlamBook : MonoBehaviour
                 rb.AddForce(transform.forward * pushBackForce, ForceMode.Impulse); // empuja el libro hacia atrás
                 rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse); // empuja el libro hacia adelante
                 pwr.pwr -= 2;
-                pnts.puntos += 500;
+                pnts.puntos += 50;
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveSoccerBall : MonoBehaviour
 {
@@ -12,12 +13,34 @@ public class MoveSoccerBall : MonoBehaviour
 
     public Power pwr;
     public Points pnt;
+    public GameObject gs;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         pwr = FindObjectOfType<Power>();
         pnt = FindObjectOfType<Points>();
+        gs = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void OnMouseEnter()
+    {
+        if (canBeClicked && pwr.pwr < 2)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+        }
+
+        if (canBeClicked && pwr.pwr >= 2)
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+        }
+    }
+    private void OnMouseExit()
+    {
+        if (canBeClicked)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+        }
     }
 
     void OnMouseDown()
@@ -28,7 +51,8 @@ public class MoveSoccerBall : MonoBehaviour
                 rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse);
                 rb.AddForce(transform.right * -pushForce, ForceMode.Impulse);
                 pwr.pwr -= 2;
-                pnt.puntos += 500;
+                pnt.puntos += 20;
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }
 }

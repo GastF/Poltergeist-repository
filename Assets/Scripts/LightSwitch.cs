@@ -6,11 +6,25 @@ public class LightSwitch : MonoBehaviour
 {
     public Light luzDeLaHabitacion;
 
+    public Power pwr;
+    public Points pnts;
+
     private bool luzEncendida = false;
+
+    private void Start()
+    {
+        pwr = FindObjectOfType<Power>();
+        pnts = FindObjectOfType<Points>();
+    }
 
     private void OnMouseDown()
     {
-        luzEncendida = !luzEncendida;
-        luzDeLaHabitacion.enabled = luzEncendida;
+        if (pwr.pwr >= 1)
+        {
+            luzEncendida = !luzEncendida;
+            luzDeLaHabitacion.enabled = luzEncendida;
+            pwr.pwr -= 1;
+            pnts.puntos += 125;
+        }
     }
 }

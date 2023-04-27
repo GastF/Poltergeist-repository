@@ -10,18 +10,25 @@ public class MoveSoccerBall : MonoBehaviour
 
     private Rigidbody rb;
 
+    public Power pwr;
+    public Points pnt;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        pwr = FindObjectOfType<Power>();
+        pnt = FindObjectOfType<Points>();
     }
 
     void OnMouseDown()
     {
-        if (canBeClicked)
+        if (canBeClicked && pwr.pwr >= 2)
         {
-            canBeClicked = false; // desactiva el clickeo para que la acción no se repita
-            rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse);
-            rb.AddForce(transform.right * -pushForce, ForceMode.Impulse);
+                canBeClicked = false; // desactiva el clickeo para que la acción no se repita
+                rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse);
+                rb.AddForce(transform.right * -pushForce, ForceMode.Impulse);
+                pwr.pwr -= 2;
+                pnt.puntos += 500;
         }
     }
 }

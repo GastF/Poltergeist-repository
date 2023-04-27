@@ -25,12 +25,12 @@ public class LampLightExplosion : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (!isExploding && pwr.pwr < 4)
+        if (!isExploding && pwr.pwr < 1)
         {
             gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
         }
 
-        if (!isExploding && pwr.pwr >= 4)
+        if (!isExploding && pwr.pwr >= 1)
         {
             gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
         }
@@ -46,11 +46,12 @@ public class LampLightExplosion : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isExploding && pwr.pwr >= 4)
+        if (!isExploding && pwr.pwr >= 1)
         {
             currentIntensity += 1f;
             lampLight.intensity = currentIntensity;
-            pwr.pwr -= 4;
+            pwr.pwr -= 1;
+            pnts.puntos += 10;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
 
             if (currentIntensity >= maxIntensity)
@@ -58,6 +59,7 @@ public class LampLightExplosion : MonoBehaviour
                 isExploding = true;
                 lampLight.intensity = explosionIntensity;
                 pnts.puntos += 40;
+                gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
                 Destroy(lampLight, 0.3f);
             }
         }

@@ -22,12 +22,12 @@ public class LightSwitch : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (luzEncendida && pwr.pwr < 1)
+        if (pwr.pwr < 1)
         {
             gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
         }
 
-        if (luzEncendida && pwr.pwr >= 1)
+        if (pwr.pwr >= 1)
         {
             gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
         }
@@ -35,10 +35,7 @@ public class LightSwitch : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (luzEncendida)
-        {
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
-        }
     }
 
     private void OnMouseDown()

@@ -35,20 +35,23 @@ public class Condition : MonoBehaviour
         {
             countdown = false;
             but.gameObject.SetActive(true);
-            Btxt.text = "perdiste :(";
+            Btxt.text = "Te quedaste sin tiempo :(";
         }
 
-        if (pnts.puntos >= stars[0])
+        if (pnts.puntos >= stars[0] && timer <= 0)
         {
             img[0].gameObject.SetActive(true);
         }
-        if (pnts.puntos >= stars[1])
+        if (pnts.puntos >= stars[1] && timer <= 0)
         {
             img[1].gameObject.SetActive(true);
         }
         if (pnts.puntos >= stars[2])
         {
+            img[0].gameObject.SetActive(true);
+            img[1].gameObject.SetActive(true);
             img[2].gameObject.SetActive(true);
+
             countdown = false;
             but.gameObject.SetActive(true);
             Btxt.text = "GANASTE :)";

@@ -12,7 +12,7 @@ public class SlamBook : MonoBehaviour
     public Power pwr;
     public Points pnts;
     public GameObject gs;
-
+   
     private Rigidbody rb;
 
     void Start()
@@ -21,6 +21,7 @@ public class SlamBook : MonoBehaviour
         pwr = FindObjectOfType<Power>();
         pnts = FindObjectOfType<Points>();
         gs = GameObject.FindGameObjectWithTag("Player");
+      
     }
 
     private void OnMouseEnter()
@@ -48,6 +49,8 @@ public class SlamBook : MonoBehaviour
     {
         if (canBeClicked && pwr.pwr >= 2)
         {
+                AkSoundEngine.PostEvent("Play_book", gameObject);
+            
                 canBeClicked = false; // desactiva el clickeo para que la acción no se repita
                 rb.AddForce(transform.forward * pushBackForce, ForceMode.Impulse); // empuja el libro hacia atrás
                 rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse); // empuja el libro hacia adelante

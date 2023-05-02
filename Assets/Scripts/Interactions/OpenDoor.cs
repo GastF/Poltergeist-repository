@@ -11,6 +11,7 @@ public class OpenDoor : MonoBehaviour
 
     private bool doorOpen = false;
     private Animator animator;
+    
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class OpenDoor : MonoBehaviour
         pwr = FindObjectOfType<Power>();
         pnts = FindObjectOfType<Points>();
         gs = GameObject.FindGameObjectWithTag("Player");
+       
     }
 
     private void OnMouseEnter()
@@ -44,11 +46,12 @@ public class OpenDoor : MonoBehaviour
     {
         if (!doorOpen && pwr.pwr >= 2)
         {
+                AkSoundEngine.PostEvent("Play_door", gameObject);
                 animator.enabled = true;
                 doorOpen = true;
                 pwr.pwr -= 2;
                 pnts.puntos += 20;
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+                gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }
 }

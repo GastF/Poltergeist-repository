@@ -12,6 +12,7 @@ public class Manifestation : MonoBehaviour
 
     private bool manifested = false;
     private Animator animator;
+
     
 
     private void Start()
@@ -21,6 +22,7 @@ public class Manifestation : MonoBehaviour
         pnts = FindObjectOfType<Points>();
         gs = GameObject.FindGameObjectWithTag("Player");
         M.GetComponent<Animator>().enabled = false;
+      
     }
 
     private void OnMouseEnter()
@@ -48,7 +50,7 @@ public class Manifestation : MonoBehaviour
     {
         if (!manifested && pwr.pwr >= 6)
         {
-           
+            AkSoundEngine.PostEvent("Play_under_bed", gameObject);
             manifested = true;
             pwr.pwr -= 6;
             pnts.puntos += 60;

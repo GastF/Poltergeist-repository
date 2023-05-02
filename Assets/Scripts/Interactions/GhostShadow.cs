@@ -8,6 +8,7 @@ public class GhostShadow : MonoBehaviour
     public Power pwr;
     public Points pnts;
     public GameObject gs;
+    
 
     private bool clickOnWindow = false;
     private Animator animator;
@@ -18,6 +19,7 @@ public class GhostShadow : MonoBehaviour
         pwr = FindObjectOfType<Power>();
         pnts = FindObjectOfType<Points>();
         gs = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     private void OnMouseEnter()
@@ -45,6 +47,7 @@ public class GhostShadow : MonoBehaviour
     {
         if (!clickOnWindow && pwr.pwr >= 5)
         {
+            AkSoundEngine.PostEvent("Play_window_f", gameObject);
             animator.enabled = true;
             clickOnWindow = true;
             pwr.pwr -= 5;

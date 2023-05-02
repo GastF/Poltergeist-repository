@@ -45,6 +45,7 @@ public class OpenDrawers : MonoBehaviour
     {
         if (!cajonAbierto && pwr.pwr >= 2)
         {
+                AkSoundEngine.PostEvent("Play_drawer", gameObject);
                 animator.enabled = true;
                 cajonAbierto = true;
                 pwr.pwr -= 2;

@@ -5,17 +5,16 @@ using UnityEngine;
 public class Ghost : MonoBehaviour
 {
     Vector3 temp;
-    private float x = 40;
-    private float y = -40;
+    private float x = 20;
+    private float y = -20;
 
     
     void Update()
     {
         //Fantasma sigue el mouse
-        temp = Input.mousePosition;
-        /*temp.x = Input.mousePosition.x + x;
+        //temp = Input.mousePosition;
+        temp.x = Input.mousePosition.x + x;
         temp.y = Input.mousePosition.y + y;
-        temp.z += 1;*/
         this.transform.position = temp;
     }
 }

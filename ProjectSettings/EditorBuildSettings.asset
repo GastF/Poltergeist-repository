@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Kid Room.unity
+    guid: e93b024fb1c66f843b53a397203680ad
+  - enabled: 1
+    path: Assets/Scenes/Tutorial1.unity
+    guid: 36c440d6dec6f50448718dc2496cc390
+  - enabled: 1
+    path: Assets/Scenes/Tutorial2.unity
+    guid: e6689f78739f0cf4a9d26f067e7a8751
+  - enabled: 1
+    path: Assets/Scenes/Tutorial3.unity
+    guid: d0a70a5e2d1f0714387b68967200835f
+  - enabled: 1
+    path: Assets/Scenes/UI_menu.unity
+    guid: 89fbff6cf10f061479de3292bec71f3f
   m_configObjects: {}

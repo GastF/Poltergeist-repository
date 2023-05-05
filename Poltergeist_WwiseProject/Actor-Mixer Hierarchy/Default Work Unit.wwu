@@ -1402,6 +1402,84 @@
 						</Sound>
 					</ChildrenList>
 				</BlendContainer>
+				<Sound Name="Poltergeist_gameover_140" ID="{848825C5-62E1-4F0F-BC8F-9332ABEABF41}" ShortID="3767231">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{17998CC2-02D4-4A11-BDDD-0E2560FEAC72}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-3"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D0EEA7A7-95EA-41AF-911F-213FB5B9D822}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3460E6E6-AFC7-4E06-A361-10E28AEDE901}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Poltergeist_gameover_140" ID="{495B9E1E-26AF-42EF-9ECA-80A6DFA5B990}">
+							<Language>SFX</Language>
+							<AudioFile>Poltergeist_gameover_140.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="760606562"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Poltergeist_gameover_140" ID="{495B9E1E-26AF-42EF-9ECA-80A6DFA5B990}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Poltergeist_win_140" ID="{52C74108-1D7E-4BF2-95EA-34BEE774157F}" ShortID="494675120">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{AADE1144-F6A9-4EA7-BADA-E16A5765415B}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-3"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D0EEA7A7-95EA-41AF-911F-213FB5B9D822}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3460E6E6-AFC7-4E06-A361-10E28AEDE901}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Poltergeist_win_140" ID="{8AE6E606-F437-45E7-B3FE-BB63142C2DDB}">
+							<Language>SFX</Language>
+							<AudioFile>Poltergeist_win_140.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="775798993"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Poltergeist_win_140" ID="{8AE6E606-F437-45E7-B3FE-BB63142C2DDB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

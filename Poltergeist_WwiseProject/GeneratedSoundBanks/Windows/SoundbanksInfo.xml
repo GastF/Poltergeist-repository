@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{0E4600F1-FADB-6772-CEAE-8A4A4EE262F4}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{0AE0DD02-FC6D-0F64-A4CA-E79FA5B8A159}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
@@ -52,7 +52,7 @@
 				</File>
 				<File Id="277179827" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_glass_crash.wav</ShortName>
-					<CachePath>SFX/sfx_glass_crash_054CA07C.wem</CachePath>
+					<CachePath>SFX/sfx_glass_crash_1AF2246A.wem</CachePath>
 				</File>
 				<File Id="322798135" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_orb_1.wav</ShortName>
@@ -60,7 +60,7 @@
 				</File>
 				<File Id="352770780" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>env_wind.wav</ShortName>
-					<CachePath>SFX/env_wind_21B978B3.wem</CachePath>
+					<CachePath>SFX/env_wind_6F6AA8CC.wem</CachePath>
 				</File>
 				<File Id="378294297" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>os_open_drawer_2.wav</ShortName>
@@ -86,13 +86,21 @@
 					<ShortName>sfx_orb_2.wav</ShortName>
 					<CachePath>SFX/sfx_orb_2_10C4C929.wem</CachePath>
 				</File>
+				<File Id="760606562" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Poltergeist_gameover_140.wav</ShortName>
+					<CachePath>SFX/Poltergeist_gameover_140_10C4C929.wem</CachePath>
+				</File>
+				<File Id="775798993" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Poltergeist_win_140.wav</ShortName>
+					<CachePath>SFX/Poltergeist_win_140_10C4C929.wem</CachePath>
+				</File>
 				<File Id="788957890" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_radio_3.wav</ShortName>
 					<CachePath>SFX/sfx_radio_3_10C4C929.wem</CachePath>
 				</File>
 				<File Id="791763607" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>hit_holy_water.wav</ShortName>
-					<CachePath>SFX/hit_holy_water_0A056774.wem</CachePath>
+					<CachePath>SFX/hit_holy_water_99F3489C.wem</CachePath>
 				</File>
 				<File Id="794870532" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_light_click.wav</ShortName>
@@ -104,7 +112,7 @@
 				</File>
 				<File Id="823955569" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>amb_wind.wav</ShortName>
-					<CachePath>SFX/amb_wind_E3A11D4A.wem</CachePath>
+					<CachePath>SFX/amb_wind_615FDB90.wem</CachePath>
 				</File>
 				<File Id="854763766" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>vo_2.wav</ShortName>
@@ -112,7 +120,7 @@
 				</File>
 				<File Id="860664675" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>hit_estante.wav</ShortName>
-					<CachePath>SFX/hit_estante_07638378.wem</CachePath>
+					<CachePath>SFX/hit_estante_B41D4942.wem</CachePath>
 				</File>
 				<File Id="881638045" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_radio_2.wav</ShortName>
@@ -120,7 +128,7 @@
 				</File>
 				<File Id="936781364" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_light_2.wav</ShortName>
-					<CachePath>SFX/sfx_light_2_C67A88EF.wem</CachePath>
+					<CachePath>SFX/sfx_light_2_D32E1054.wem</CachePath>
 				</File>
 				<File Id="950822288" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>os_obj_book_crash_1.wav</ShortName>
@@ -207,6 +215,11 @@
 						<MediaRef Id="955166845"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="4227017011" Name="Play_Poltergeist_gameover_140" DurationType="OneShot" DurationMin="8.571438" DurationMax="8.571438">
+					<MediaRefs>
+						<MediaRef Id="760606562"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2654192043" Name="Play_Poltergeist_gameplay_140" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="105161316"/>
@@ -215,6 +228,11 @@
 				<Event Id="598019610" Name="Play_Poltergeist_menu_140" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1008711001"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2277155479" Name="Play_Poltergeist_win_140" DurationType="OneShot" DurationMin="8.571438" DurationMax="8.571438">
+					<MediaRefs>
+						<MediaRef Id="775798993"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2953849999" Name="Play_radio" DurationType="OneShot" DurationMin="9.781361" DurationMax="11.898072">
@@ -244,5 +262,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DBE08403-DED4-CED8-7B84-7A97575448EE}</FileHash>
+	<FileHash>{550FAE86-2102-9F7E-ECEB-0CC771761DD1}</FileHash>
 </SoundBanksInfo>

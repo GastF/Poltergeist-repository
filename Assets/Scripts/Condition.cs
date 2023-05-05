@@ -32,7 +32,8 @@ public class Condition : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
-        txt.text = timer.ToString();
+        
+        txt.text = timer.ToString("F0");
 
         if (timer <= 0)
         {

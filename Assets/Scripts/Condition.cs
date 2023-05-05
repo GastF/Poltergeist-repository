@@ -36,6 +36,8 @@ public class Condition : MonoBehaviour
             countdown = false;
             but.gameObject.SetActive(true);
             Btxt.text = "Te quedaste sin tiempo :(";
+            AkSoundEngine.PostEvent("Stop_Poltergeist_gameplay_140", gameObject);
+            AkSoundEngine.PostEvent("Play_Poltergeist_gameover_140", gameObject);
         }
 
         if (pnts.puntos >= stars[0] && timer <= 0)
@@ -48,6 +50,8 @@ public class Condition : MonoBehaviour
         }
         if (pnts.puntos >= stars[2])
         {
+            AkSoundEngine.PostEvent("Stop_Poltergeist_gameplay_140", gameObject);
+            AkSoundEngine.PostEvent("Play_Poltergeist_win_140", gameObject);
             img[0].gameObject.SetActive(true);
             img[1].gameObject.SetActive(true);
             img[2].gameObject.SetActive(true);

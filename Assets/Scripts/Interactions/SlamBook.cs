@@ -12,7 +12,7 @@ public class SlamBook : MonoBehaviour
     public Power pwr;
     public Points pnts;
     public GameObject gs;
-   
+    
     private Rigidbody rb;
 
     void Start()
@@ -29,6 +29,7 @@ public class SlamBook : MonoBehaviour
         if (canBeClicked && pwr.pwr < 2)
         {
             gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            
         }
 
         if (canBeClicked && pwr.pwr >= 2)

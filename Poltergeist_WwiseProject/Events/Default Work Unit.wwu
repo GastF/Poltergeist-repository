@@ -163,7 +163,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Poltergeist_gameover_140" ID="{1D4C5F34-8C34-456E-AA2D-75AE769614C1}">
+				<Event Name="Play_gameover" ID="{1D4C5F34-8C34-456E-AA2D-75AE769614C1}">
 					<ChildrenList>
 						<Action Name="" ID="{DB761520-C9A7-4EFE-AD26-74CB958A3D1C}" ShortID="3771247">
 							<ReferenceList>
@@ -174,7 +174,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Poltergeist_win_140" ID="{8ED6BB86-36F7-4959-ADD4-C6D9B72F2E8A}">
+				<Event Name="Play_win" ID="{8ED6BB86-36F7-4959-ADD4-C6D9B72F2E8A}">
 					<ChildrenList>
 						<Action Name="" ID="{ABCD6F31-2A44-4DCB-9CA8-0F939DF7BC3F}" ShortID="717505986">
 							<ReferenceList>

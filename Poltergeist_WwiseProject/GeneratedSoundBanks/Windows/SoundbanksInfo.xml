@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{0AE0DD02-FC6D-0F64-A4CA-E79FA5B8A159}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{2447E0ED-C34D-1120-ADA0-4CA6DA34075E}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
@@ -187,6 +187,11 @@
 						<MediaRef Id="1038867256"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3174629258" Name="Play_gameover" DurationType="OneShot" DurationMin="8.571438" DurationMax="8.571438">
+					<MediaRefs>
+						<MediaRef Id="760606562"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2683200827" Name="Play_light_click" DurationType="OneShot" DurationMin="0.12786141" DurationMax="0.13198867">
 					<MediaRefs>
 						<MediaRef Id="794870532"/>
@@ -215,11 +220,6 @@
 						<MediaRef Id="955166845"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4227017011" Name="Play_Poltergeist_gameover_140" DurationType="OneShot" DurationMin="8.571438" DurationMax="8.571438">
-					<MediaRefs>
-						<MediaRef Id="760606562"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="2654192043" Name="Play_Poltergeist_gameplay_140" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="105161316"/>
@@ -228,11 +228,6 @@
 				<Event Id="598019610" Name="Play_Poltergeist_menu_140" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1008711001"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2277155479" Name="Play_Poltergeist_win_140" DurationType="OneShot" DurationMin="8.571438" DurationMax="8.571438">
-					<MediaRefs>
-						<MediaRef Id="775798993"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2953849999" Name="Play_radio" DurationType="OneShot" DurationMin="9.781361" DurationMax="11.898072">
@@ -249,6 +244,11 @@
 						<MediaRef Id="854763766"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2955987680" Name="Play_win" DurationType="OneShot" DurationMin="8.571438" DurationMax="8.571438">
+					<MediaRefs>
+						<MediaRef Id="775798993"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1690538505" Name="Play_window_f" DurationType="OneShot" DurationMin="4.3607097" DurationMax="4.90322">
 					<MediaRefs>
 						<MediaRef Id="222131146"/>
@@ -262,5 +262,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{550FAE86-2102-9F7E-ECEB-0CC771761DD1}</FileHash>
+	<FileHash>{1BDC4314-EA1E-D464-9AE7-A1A67EB615DA}</FileHash>
 </SoundBanksInfo>

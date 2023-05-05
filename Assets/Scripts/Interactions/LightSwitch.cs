@@ -10,6 +10,7 @@ public class LightSwitch : MonoBehaviour
     public Power pwr;
     public Points pnts;
     public GameObject gs;
+    private int lightBreak;
 
     private bool luzEncendida = false;
 
@@ -18,19 +19,24 @@ public class LightSwitch : MonoBehaviour
         pwr = FindObjectOfType<Power>();
         pnts = FindObjectOfType<Points>();
         gs = GameObject.FindGameObjectWithTag("Player");
+        lightBreak = 0;
     }
 
     private void OnMouseEnter()
     {
-        if ( pwr.pwr < 1)
+        if (lightBreak < 3)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
-        }
+            if (pwr.pwr < 1)
+            {
+                gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            }
 
-        if ( pwr.pwr >= 1)
-        {
-            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            if (pwr.pwr >= 1)
+            {
+                gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            }
         }
+        else { gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100); }
     }
 
     private void OnMouseExit()
@@ -43,13 +49,19 @@ public class LightSwitch : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (pwr.pwr >= 1)
+        if (lightBreak < 3)
         {
-            luzEncendida = !luzEncendida;
-            luzDeLaHabitacion.enabled = luzEncendida;
-            pwr.pwr -= 1;
-            pnts.puntos += 10;
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            if (pwr.pwr >= 1)
+            {
+                AkSoundEngine.PostEvent("Play_light_click", gameObject);
+                lightBreak++;
+                luzEncendida = !luzEncendida;
+                luzDeLaHabitacion.enabled = luzEncendida;
+                pwr.pwr -= 1;
+                pnts.puntos += 10;
+                gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            }
         }
+        else { luzDeLaHabitacion.enabled = false;}
     }
 }

@@ -11,7 +11,7 @@ public class SlamShelf : MonoBehaviour
     public Power pwr;
     public Points pnts;
     public GameObject gs;
-
+ 
     private Rigidbody rb;
 
     void Start()
@@ -50,6 +50,7 @@ public class SlamShelf : MonoBehaviour
                 canBeClicked = false; // desactiva el clickeo para que la acción no se repita
                 rb.AddForce(transform.forward * pushForce, ForceMode.Impulse);
 
+        
             pnts.puntos += 200;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }

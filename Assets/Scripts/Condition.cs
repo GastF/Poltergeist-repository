@@ -13,6 +13,9 @@ public class Condition : MonoBehaviour
     public float timer;
     public int[] stars;
     bool countdown = true;
+    public AkEvent win;
+    public AkEvent lose;
+    public AkEvent stopGameplayMusic;
 
     private void Start()
     {
@@ -36,26 +39,34 @@ public class Condition : MonoBehaviour
             countdown = false;
             but.gameObject.SetActive(true);
             Btxt.text = "Te quedaste sin tiempo :(";
-            AkSoundEngine.PostEvent("Stop_Poltergeist_gameplay_140", gameObject);
-            AkSoundEngine.PostEvent("Play_Poltergeist_gameover_140", gameObject);
+            lose.enabled = true;
+            win.enabled = false;
+            stopGameplayMusic.enabled = true;
         }
 
         if (pnts.puntos >= stars[0] && timer <= 0)
         {
             img[0].gameObject.SetActive(true);
+            lose.enabled = true;
+            win.enabled = false;
+            stopGameplayMusic.enabled = true;
         }
         if (pnts.puntos >= stars[1] && timer <= 0)
         {
             img[1].gameObject.SetActive(true);
+            lose.enabled = true;
+            win.enabled = false;
+            stopGameplayMusic.enabled = true;
         }
         if (pnts.puntos >= stars[2])
         {
-            AkSoundEngine.PostEvent("Stop_Poltergeist_gameplay_140", gameObject);
-            AkSoundEngine.PostEvent("Play_Poltergeist_win_140", gameObject);
+            
             img[0].gameObject.SetActive(true);
             img[1].gameObject.SetActive(true);
             img[2].gameObject.SetActive(true);
-
+            lose.enabled = false;
+            win.enabled = true;
+            stopGameplayMusic.enabled = true;
             countdown = false;
             but.gameObject.SetActive(true);
             Btxt.text = "GANASTE :)";

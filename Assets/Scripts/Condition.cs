@@ -8,6 +8,8 @@ public class Condition : MonoBehaviour
     public Text txt;
     public Text Btxt;
     public Button but;
+    public Text Btxtmenu;
+    public Button butmenu;
     public Image[] img;
     public Points pnts;
     public float timer;
@@ -24,6 +26,7 @@ public class Condition : MonoBehaviour
         img[1].gameObject.SetActive(false);
         img[2].gameObject.SetActive(false);
         but.gameObject.SetActive(false);
+        butmenu.gameObject.SetActive(false);
     }
 
     void Update()
@@ -38,6 +41,7 @@ public class Condition : MonoBehaviour
         if (timer <= 0)
         {
             countdown = false;
+            butmenu.gameObject.SetActive(true);
             but.gameObject.SetActive(true);
             Btxt.text = "Te quedaste sin tiempo :(";
             lose.enabled = true;
@@ -70,6 +74,7 @@ public class Condition : MonoBehaviour
             stopGameplayMusic.enabled = true;
             countdown = false;
             but.gameObject.SetActive(true);
+            butmenu.gameObject.SetActive(true);
             Btxt.text = "GANASTE :)";
         }
     }

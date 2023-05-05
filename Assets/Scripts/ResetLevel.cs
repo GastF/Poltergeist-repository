@@ -12,4 +12,12 @@ public class ResetLevel : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
        
     }
+    public void Change(string i)
+    {
+        SceneManager.LoadScene(i);
+    }
+    public void CursorVisibile()
+    {
+        Cursor.visible = true;
+    }
 }

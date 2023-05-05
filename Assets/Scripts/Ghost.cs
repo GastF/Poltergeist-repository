@@ -5,8 +5,8 @@ using UnityEngine;
 public class Ghost : MonoBehaviour
 {
     Vector3 temp;
-    public float x ;
-    public float y ;
+    public float x =40;
+    public float y =-35;
 
 
     void Update()

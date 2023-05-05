@@ -50,7 +50,7 @@ public class OpenDoor : MonoBehaviour
                 animator.enabled = true;
                 doorOpen = true;
                 pwr.pwr -= 2;
-                pnts.puntos += 20;
+                pnts.puntos += 25;
                 gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }

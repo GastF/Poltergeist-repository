@@ -51,7 +51,7 @@ public class SlamShelf : MonoBehaviour
                 rb.AddForce(transform.forward * pushForce, ForceMode.Impulse);
 
         
-            pnts.puntos += 200;
+            pnts.puntos += 205;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }

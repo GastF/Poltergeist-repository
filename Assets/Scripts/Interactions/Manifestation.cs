@@ -53,7 +53,7 @@ public class Manifestation : MonoBehaviour
             AkSoundEngine.PostEvent("Play_under_bed", gameObject);
             manifested = true;
             pwr.pwr -= 6;
-            pnts.puntos += 60;
+            pnts.puntos += 65;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
             M.GetComponent<Animator>().enabled = true;
         }

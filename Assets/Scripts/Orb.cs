@@ -8,10 +8,12 @@ public class Orb : MonoBehaviour
     public GameObject slamShelf; // Referencia al objeto estantería
     public GameObject gs;
     public bool canBeClicked = true;
+    public Points pnts;
 
     private void Start()
     {
         gs = GameObject.FindGameObjectWithTag("Player");
+        pnts = FindObjectOfType<Points>();
     }
     private void OnMouseEnter()
     {
@@ -36,7 +38,7 @@ public class Orb : MonoBehaviour
     {
         // Al hacer click en el orbe, se destruye el objeto
         Destroy(gameObject);
-
+        pnts.puntos += 10   ;
         // Se verifica si ya se han destruido los tres orbes
         if (GameObject.FindGameObjectsWithTag("Orb").Length == 0)
         {

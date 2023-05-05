@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class Points : MonoBehaviour
@@ -13,6 +14,13 @@ public class Points : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0)) // 0 significa el boton izquierdo del mouse
+        {
+            if (puntos > 0)
+            {
+                puntos -= 5;
+            }
+        }
         //Muestra los puntos
         txt.text = "Puntos: " + puntos;
 
@@ -41,4 +49,5 @@ public class Points : MonoBehaviour
         }
             puntos += i;
     }
+    
 }

@@ -58,7 +58,7 @@ public class LightSwitch : MonoBehaviour
                 luzEncendida = !luzEncendida;
                 luzDeLaHabitacion.enabled = luzEncendida;
                 pwr.pwr -= 1;
-                pnts.puntos += 10;
+                pnts.puntos += 15;
                 gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
             }
         }

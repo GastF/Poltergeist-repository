@@ -48,7 +48,7 @@ public class Radio : MonoBehaviour
             AkSoundEngine.PostEvent("Play_radio", gameObject);
             radio = true;
             pwr.pwr -= 3;
-            pnts.puntos += 30;
+            pnts.puntos += 35;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }

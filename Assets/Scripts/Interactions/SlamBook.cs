@@ -26,13 +26,13 @@ public class SlamBook : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (canBeClicked && pwr.pwr < 2)
+        if (canBeClicked && pwr.pwr < 4)
         {
             gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
             
         }
 
-        if (canBeClicked && pwr.pwr >= 2)
+        if (canBeClicked && pwr.pwr >= 4)
         {
             gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
         }
@@ -48,15 +48,15 @@ public class SlamBook : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (canBeClicked && pwr.pwr >= 2)
+        if (canBeClicked && pwr.pwr >= 4)
         {
                 AkSoundEngine.PostEvent("Play_book", gameObject);
             
                 canBeClicked = false; // desactiva el clickeo para que la acción no se repita
                 rb.AddForce(transform.forward * pushBackForce, ForceMode.Impulse); // empuja el libro hacia atrás
                 rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse); // empuja el libro hacia adelante
-                pwr.pwr -= 2;
-                pnts.puntos += 20;
+                pwr.pwr -= 4;
+                pnts.puntos += 45;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }

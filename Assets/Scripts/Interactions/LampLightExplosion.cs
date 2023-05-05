@@ -50,7 +50,7 @@ public class LampLightExplosion : MonoBehaviour
         {
             currentIntensity += 1f;
             lampLight.intensity = currentIntensity;
-            pnts.puntos += 10;
+            pnts.puntos += 15;
             pwr.pwr -= 1;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
             AkSoundEngine.PostEvent("Play_light_table", gameObject);

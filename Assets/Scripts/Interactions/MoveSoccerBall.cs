@@ -51,7 +51,7 @@ public class MoveSoccerBall : MonoBehaviour
                 rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse);
                 rb.AddForce(transform.right * -pushForce, ForceMode.Impulse);
                 pwr.pwr -= 2;
-                pnt.puntos += 20;
+                pnt.puntos += 25;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }

@@ -51,7 +51,7 @@ public class GhostShadow : MonoBehaviour
             animator.enabled = true;
             clickOnWindow = true;
             pwr.pwr -= 5;
-            pnts.puntos += 50;
+            pnts.puntos += 55;
             gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
         }
     }

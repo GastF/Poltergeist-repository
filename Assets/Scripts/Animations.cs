@@ -21,25 +21,34 @@ public class Animations : MonoBehaviour
     {
          points = pointsScript.puntos;
 
-        if (points >= 30 && points < 50)
+        if (points >= 30)
         {
             anim.SetTrigger("Alert");
         }
-        else if (points >= 50 && points < 100)
+        if (points >= 50)
         {
             anim.SetTrigger("Stand");
             anim.SetTrigger("Idle");
         }
-        else if (points >= 140 && points < 280)
+        if (points >= 125)
         {
             anim.SetTrigger("Terrified");
+            anim.SetTrigger("Stand");
+            anim.SetTrigger("Idle");
         }
-        else if (points >= 280 && points < 450)
+        if (points >= 280)
         {
+            anim.SetTrigger("Terrified");
+            anim.SetTrigger("Stand");
+            anim.SetTrigger("Idle");
             anim.SetTrigger("RunTurn");
         }
-        else if (points >= 450)
+        if (points >= 450)
         {
+            anim.SetTrigger("Terrified");
+            anim.SetTrigger("Stand");
+            anim.SetTrigger("Idle");
+            anim.SetTrigger("RunTurn");
             anim.SetTrigger("Running");
         }
 

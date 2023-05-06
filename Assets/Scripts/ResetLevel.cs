@@ -5,7 +5,7 @@ public class ResetLevel : MonoBehaviour
 {
     private void Start()
     {
-        Cursor.visible= false;
+        
     }
     public void ResetScene()
     {
@@ -16,8 +16,5 @@ public class ResetLevel : MonoBehaviour
     {
         SceneManager.LoadScene(i);
     }
-    public void CursorVisibile()
-    {
-        Cursor.visible = true;
-    }
+    
 }

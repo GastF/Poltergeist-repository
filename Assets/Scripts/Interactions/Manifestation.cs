@@ -10,6 +10,7 @@ public class Manifestation : MonoBehaviour
     public GameObject gs;
     public GameObject M;
 
+    private bool isMouseOver = false;
     private bool manifested = false;
     private Animator animator;
 
@@ -27,22 +28,24 @@ public class Manifestation : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        isMouseOver = true;
         if (!manifested && pwr.pwr < 6)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
         }
 
         if (!manifested && pwr.pwr >= 6)
         {
-            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
 
     private void OnMouseExit()
     {
+        isMouseOver=false;
         if (!manifested)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
         }
     }
 
@@ -54,8 +57,29 @@ public class Manifestation : MonoBehaviour
             manifested = true;
             pwr.pwr -= 6;
             pnts.puntos += 65;
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
             M.GetComponent<Animator>().enabled = true;
         }
     }
+    private void Update()
+    {
+        if (isMouseOver && !manifested)
+        {
+            UpdateCursorColor();
+        }
+
+    }
+
+    private void UpdateCursorColor()
+    {
+        if (pwr.pwr < 6)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
+        }
+        else
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
+        }
+    }
 }
+

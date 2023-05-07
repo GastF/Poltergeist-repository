@@ -9,6 +9,7 @@ public class OpenDoor : MonoBehaviour
     public Points pnts;
     public GameObject gs;
 
+    private bool isMouseOver = false;
     private bool doorOpen = false;
     private Animator animator;
     
@@ -24,21 +25,23 @@ public class OpenDoor : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        isMouseOver = true;
         if (!doorOpen && pwr.pwr < 2)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
         }
 
         if (!doorOpen && pwr.pwr >= 2)
         {
-            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
     private void OnMouseExit()
     {
+        isMouseOver= false;
         if (!doorOpen)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
         }
     }
 
@@ -51,7 +54,27 @@ public class OpenDoor : MonoBehaviour
                 doorOpen = true;
                 pwr.pwr -= 2;
                 pnts.puntos += 25;
-                gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+                gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
+        }
+    }
+    private void Update()
+    {
+        if (isMouseOver && !doorOpen)
+        {
+            UpdateCursorColor();
+        }
+
+    }
+
+    private void UpdateCursorColor()
+    {
+        if (pwr.pwr < 2)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
+        }
+        else
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
 }

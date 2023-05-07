@@ -12,6 +12,7 @@ public class LightSwitch : MonoBehaviour
     public GameObject gs;
     private int lightBreak;
 
+    private bool isMouseOver = false;
     private bool luzEncendida = false;
 
     private void Start()
@@ -24,32 +25,34 @@ public class LightSwitch : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (lightBreak < 3)
+        isMouseOver = true;
+        if (lightBreak < 4)
         {
+
             if (pwr.pwr < 1)
             {
-                gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+                gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
             }
 
             if (pwr.pwr >= 1)
             {
-                gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+                gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
             }
         }
-        else { gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100); }
+        else { gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175); }
     }
 
     private void OnMouseExit()
     {
         
-        
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            isMouseOver= false;
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
         
     }
 
     private void OnMouseDown()
     {
-        if (lightBreak < 3)
+        if (lightBreak < 4)
         {
             if (pwr.pwr >= 1)
             {
@@ -59,9 +62,29 @@ public class LightSwitch : MonoBehaviour
                 luzDeLaHabitacion.enabled = luzEncendida;
                 pwr.pwr -= 1;
                 pnts.puntos += 15;
-                gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+                gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
             }
         }
         else { luzDeLaHabitacion.enabled = false;}
+    }
+    private void Update()
+    {
+        if (isMouseOver && lightBreak<4)
+        {
+            UpdateCursorColor();
+        }
+
+    }
+
+    private void UpdateCursorColor()
+    {
+        if (pwr.pwr < 1)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
+        }
+        else
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
+        }
     }
 }

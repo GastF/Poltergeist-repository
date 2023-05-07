@@ -27,4 +27,5 @@ public class Power : MonoBehaviour
             pwr += Time.deltaTime / 2;
         }
     }
+
 }

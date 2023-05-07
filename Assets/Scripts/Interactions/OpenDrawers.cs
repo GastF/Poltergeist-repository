@@ -8,8 +8,11 @@ public class OpenDrawers : MonoBehaviour
     public Power pwr;
     public Points pnts;
     public GameObject gs;
+    private int i;
+
+    private bool isMouseOver;
+    private bool cajonAbierto;
     
-    private bool cajonAbierto = false;
     private Animator animator;
 
     private void Start()
@@ -18,39 +21,88 @@ public class OpenDrawers : MonoBehaviour
         pwr = FindObjectOfType<Power>();
         pnts = FindObjectOfType<Points>();
         gs = GameObject.FindGameObjectWithTag("Player");
+        cajonAbierto = false;
+        animator.SetBool("Closed", true);
+        animator.SetBool("Opened", false);
+        i = 0;
+        
     }
-
+   
     private void OnMouseEnter()
     {
-        if (!cajonAbierto && pwr.pwr < 2)
+        isMouseOver = true;
+        if ( pwr.pwr < 2)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
         }
 
-        if (!cajonAbierto && pwr.pwr >= 2)
+        if (pwr.pwr >= 2)
         {
-            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
 
     private void OnMouseExit()
     {
-        if (!cajonAbierto)
-        {
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
-        }
+            isMouseOver= false;
+        
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
+        
     }
 
     private void OnMouseDown()
     {
-        if (!cajonAbierto && pwr.pwr >= 2)
+        if (!cajonAbierto && pwr.pwr >= 2 )
         {
                 AkSoundEngine.PostEvent("Play_drawer", gameObject);
-                animator.enabled = true;
+                if(animator.enabled == false) { animator.enabled = true; }
+                animator.SetBool("Opened", true);
+                animator.SetBool("Closed", false);
                 cajonAbierto = true;
                 pwr.pwr -= 2;
+            if (i == 0)
+            {
                 pnts.puntos += 25;
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+                i++;
+            }
+            if (i> 0)
+            {
+                pnts.puntos += 5;
+            }
+           
+            
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
+        }
+        if (cajonAbierto && pwr.pwr >= 2 )
+        {
+            AkSoundEngine.PostEvent("Play_drawer", gameObject);
+            animator.SetBool("Closed", true);
+            animator.SetBool("Opened", false);
+            cajonAbierto = false;
+            pwr.pwr -= 2;
+            pnts.puntos += 5;
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
         }
     }
+    private void Update()
+    {
+        if (isMouseOver)
+        {
+            UpdateCursorColor();
+        }
+
+    }
+
+    private void UpdateCursorColor()
+    {
+        if (pwr.pwr < 2)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
+        }
+        else
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
+        }
+    }
+
 }

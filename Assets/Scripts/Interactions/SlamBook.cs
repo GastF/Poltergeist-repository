@@ -8,7 +8,7 @@ public class SlamBook : MonoBehaviour
     public float pushForce = 10f; // fuerza con la que se empujará el libro hacia adelante
     public float pushBackForce = 2f; // fuerza con la que se empujará el libro hacia atrás antes de salir disparado
     public bool canBeClicked = true; // indica si el libro puede ser clickeado o no
-
+    private bool isMouseOver=false;
     public Power pwr;
     public Points pnts;
     public GameObject gs;
@@ -26,23 +26,25 @@ public class SlamBook : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        isMouseOver= true;
         if (canBeClicked && pwr.pwr < 4)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
             
         }
 
         if (canBeClicked && pwr.pwr >= 4)
         {
-            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
 
     private void OnMouseExit()
     {
+        isMouseOver= false;
         if (canBeClicked)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
         }
     }
 
@@ -57,7 +59,27 @@ public class SlamBook : MonoBehaviour
                 rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse); // empuja el libro hacia adelante
                 pwr.pwr -= 4;
                 pnts.puntos += 45;
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
+        }
+    }
+    private void Update()
+    {
+        if (isMouseOver && canBeClicked)
+        {
+            UpdateCursorColor();
+        }
+
+    }
+
+    private void UpdateCursorColor()
+    {
+        if (pwr.pwr < 4)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
+        }
+        else
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
 }

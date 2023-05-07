@@ -9,6 +9,7 @@ public class MoveSoccerBall : MonoBehaviour
  
     public bool canBeClicked = true;
 
+    private bool isMouseOver = false;
     private Rigidbody rb;
 
     public Power pwr;
@@ -25,34 +26,55 @@ public class MoveSoccerBall : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        isMouseOver = true;
         if (canBeClicked && pwr.pwr < 2)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
         }
 
         if (canBeClicked && pwr.pwr >= 2)
         {
-            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
     private void OnMouseExit()
     {
+        isMouseOver = false;
         if (canBeClicked)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
         }
     }
 
     void OnMouseDown()
     {
-        if (canBeClicked && pwr.pwr >= 2)
+        if (isMouseOver&&canBeClicked && pwr.pwr >= 2)
         {
                 canBeClicked = false; // desactiva el clickeo para que la acción no se repita
                 rb.AddForce(transform.forward * -pushForce, ForceMode.Impulse);
                 rb.AddForce(transform.right * -pushForce, ForceMode.Impulse);
                 pwr.pwr -= 2;
                 pnt.puntos += 25;
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+                gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
+        }
+    }
+    private void Update()
+    {
+        if (isMouseOver&&canBeClicked)
+        {
+            UpdateCursorColor();
+        }
+    }
+
+    private void UpdateCursorColor()
+    {
+        if (pwr.pwr < 2)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
+        }
+        else
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
 }

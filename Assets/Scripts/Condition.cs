@@ -27,6 +27,7 @@ public class Condition : MonoBehaviour
         img[2].gameObject.SetActive(false);
         but.gameObject.SetActive(false);
         butmenu.gameObject.SetActive(false);
+        Btxt.enabled= false;
     }
 
     void Update()
@@ -40,10 +41,11 @@ public class Condition : MonoBehaviour
 
         if (timer <= 0)
         {
+            Btxt.enabled = true;
             countdown = false;
             butmenu.gameObject.SetActive(true);
             but.gameObject.SetActive(true);
-            Btxt.text = "Te quedaste sin tiempo :(";
+            Btxt.text = "Se acabo el tiempo";
             lose.enabled = true;
             win.enabled = false;
             stopGameplayMusic.enabled = true;
@@ -51,6 +53,7 @@ public class Condition : MonoBehaviour
 
         if (pnts.puntos >= stars[0] && timer <= 0)
         {
+            Btxt.enabled = true;
             img[0].gameObject.SetActive(true);
             lose.enabled = true;
             win.enabled = false;
@@ -58,14 +61,16 @@ public class Condition : MonoBehaviour
         }
         if (pnts.puntos >= stars[1] && timer <= 0)
         {
+            Btxt.enabled = true;
             img[1].gameObject.SetActive(true);
             lose.enabled = true;
             win.enabled = false;
             stopGameplayMusic.enabled = true;
         }
+
         if (pnts.puntos >= stars[2])
         {
-            
+            Btxt.enabled = true;
             img[0].gameObject.SetActive(true);
             img[1].gameObject.SetActive(true);
             img[2].gameObject.SetActive(true);
@@ -75,7 +80,7 @@ public class Condition : MonoBehaviour
             countdown = false;
             but.gameObject.SetActive(true);
             butmenu.gameObject.SetActive(true);
-            Btxt.text = "GANASTE :)";
+            Btxt.text = "GANASTE!!!";
         }
     }
 }

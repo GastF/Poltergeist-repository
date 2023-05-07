@@ -20,18 +20,18 @@ public class Orb : MonoBehaviour
 
         if (canBeClicked)
         {
-            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
         else
         {
-            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
         }
     }
     private void OnMouseExit()
     {
         if (canBeClicked)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
         }
     }
     private void OnMouseDown()

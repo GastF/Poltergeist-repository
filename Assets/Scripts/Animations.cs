@@ -8,6 +8,7 @@ public class Animations : MonoBehaviour
     public Points pointsScript;
     public int points;
     private Animator anim;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +39,13 @@ public class Animations : MonoBehaviour
         }
         if (points >= 280)
         {
+         
             anim.SetTrigger("Terrified");
             anim.SetTrigger("Stand");
             anim.SetTrigger("Idle");
             anim.SetTrigger("RunTurn");
         }
-        if (points >= 450)
+        if (points >= 475)
         {
             anim.SetTrigger("Terrified");
             anim.SetTrigger("Stand");

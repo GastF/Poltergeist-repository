@@ -7,7 +7,7 @@ public class SlamShelf : MonoBehaviour
     public float pushForce = 50f;
 
     public bool canBeClicked = true;
-
+    private bool isMouseOver = false;   
     public Power pwr;
     public Points pnts;
     public GameObject gs;
@@ -24,22 +24,23 @@ public class SlamShelf : MonoBehaviour
 
     private void OnMouseEnter()
     {
-
+        isMouseOver= true;
         if (canBeClicked && GameObject.FindGameObjectsWithTag("Orb").Length == 0)
         {
-            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
         else
         {
-            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
         }
     }
 
     private void OnMouseExit()
     {
+        isMouseOver= false;
         if (canBeClicked)
         {
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
         }
     }
 
@@ -52,7 +53,27 @@ public class SlamShelf : MonoBehaviour
 
         
             pnts.puntos += 205;
-            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gs.GetComponent<Image>().color = new Color32(255, 255, 255, 175);
+        }
+    }
+    private void Update()
+    {
+        if (isMouseOver && canBeClicked)
+        {
+            UpdateCursorColor();
+        }
+
+    }
+
+    private void UpdateCursorColor()
+    {
+        if (GameObject.FindGameObjectsWithTag("Orb").Length > 0)
+        {
+            gs.GetComponent<Image>().color = new Color32(255, 0, 0, 175);
+        }
+        else
+        {
+            gs.GetComponent<Image>().color = new Color32(0, 255, 0, 175);
         }
     }
 }

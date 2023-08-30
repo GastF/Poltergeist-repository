@@ -11,5 +11,6 @@ Credits:
 
 Gameplay Programmer and Asset Integration - Ghastt
 UI and score programming - Pablo Vallejos
+2D art: Vanesa Lange
 Sfx and Music : Manuel Saenz
 

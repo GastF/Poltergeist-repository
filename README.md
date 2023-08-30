@@ -10,5 +10,6 @@ The controls are pretty easy, its a Point 'n Click  so you only have to use the 
 Credits:
 
 Gameplay Programmer and Asset Integration - Ghastt
-
+UI and score programming - Pablo Vallejos
+Sfx and Music : Manuel Saenz
 
